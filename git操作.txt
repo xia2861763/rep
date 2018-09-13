@@ -1,0 +1,26 @@
+【第一步】进入GitHub官网，注册账户并建立仓库 Create a New Repository
+【第二步】在本机上安装git，建议安装图形化软件Git Bush,下载地址https://git-scm.com/download/，具体安装步骤可自行百度。
+【第三步】点击Git Bash进入git命令行，通过cd选择路径，执行 git init，会在当前目录下创建一个.git文件夹，因这是一个隐藏文件 
+，需要设置显示隐藏文件夹才能看见，至此就成功创建了本地git。
+【第四步】配置git 
+    （1）在本地创建ssh key，执行$ ssh-keygen -t rsa -C "your_email@youremail.com（改为自己邮箱名）"，之后会要求确认路径和密码，
+使用默认一路回车就行，成功的话会生成.ssh文件夹（和.git文件夹在同一目录下），进去，打开id_rsa.pub，复制里面的key；
+回到github官网个人中心，进入Personal settings，选择SSH and GPG keys->New SSH Key,填写任意title名，粘贴刚刚复制的key，确认即可。
+    （2）验证是否成功。在git bash下执行$ ssh -T git@github.com，碰到yes or no的选择，一律选择yes，看到successfully字样的时候，证明验证成功。
+【第五步】将本地仓库关联到github上
+     (1)设置username和email。分别先后执行命令$ git config --global user.name "自定义用户名" 和$ git config --global user.email "自己邮箱名”。
+     (2)添加远程地址。执行命令$ git remote add origin git@github.com:yourName/yourRepo.git，yourName是你的GitHub用户名，
+yourRepo是你在第一步中新建的仓库名（注意不要忘记在仓库名后加上.git），命令执行完后，进入.git文件夹，打开config文件,
+[remote "origin"]的内容就是刚才添加的远程地址，你也可以直接修改config来配置远程地址。
+【第六步】提交并上传个人文件
+（1）在本地仓库里添加要上传的个人文件（和.git位于同一目录），先后执行命令$ git add demo和$ git commit -m "first commit（自定义注释）"，demo为文件名。
+（2）上传到github 。执行命令$ git push origin master，等待文件上传成功。截止到此，所有文件上传步骤就全部完成了，后期如果本地文件中有更新改动，
+只需每次执行$ git push origin master，即可将本地master分支的最新修改推送至GitHub。
+【第六步】从GitHub获取文件
+（1）通过cd命令，进入自己想要存放项目的文件夹
+（2）输入git clone url ，url为你要获取的项目地址
+（3）项目获取成功
+【第七步】远程删除GitHub中的文件，依次执行如下命令：
+          git rm 文件名 
+          git commit -m "Remove a file（自定义注释）" 
+          git push origin master 
