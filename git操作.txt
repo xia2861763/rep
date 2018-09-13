@@ -24,3 +24,5 @@ yourRepo是你在第一步中新建的仓库名（注意不要忘记在仓库名后加上.git），命令执行完
           git rm 文件名 
           git commit -m "Remove a file（自定义注释）" 
           git push origin master 
+
+注意：解决无法识别中文文件名的问题，执行命令git config --global core.quotepath false
