@@ -1,0 +1,18 @@
+
+注：KD项目所有代码暂时均不要提交
+
+-----2018.8.13------
+
+新建页面跳转，注释掉todoList.html文件中：
+<div class="right my-right">
+                <a lang-key="Marke" href="html/todo/markcctodo.html">标注</a>
+            </div>
+更改为：
+<div class="right my-right">
+                <a lang-key="Marke" href="KD/html/agentCheck.html">标注</a>
+            </div>
+
+待解决问题：
+    1.当审核页面初始化时，是一次性加载所有审核信息还是只显示固定条数？
+    2.审核记录对应当前审批内容的审批结果还是所有审批结果？
+    3.一级审核页面内容相同，但是二三级页面内容不一样，怎么判断？
